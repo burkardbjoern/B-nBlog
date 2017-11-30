@@ -1,0 +1,154 @@
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: grey;
+}
+#head {
+  background-color: grey;
+  width: 100%;
+  margin-top: 0px;
+}
+#welcome {
+  text-align: center;
+  height: auto;
+  font-size: 4em;
+  color: white;
+  text-decoration: underline;
+}
+#nav {
+  width: calc(100% - 4px);
+  background-color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  border-radius: 5px;
+  font-size: 2em;
+  padding-left: 10px;
+  padding-bottom: 30px;
+  display: inline-block;
+
+}
+#nav a {
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-right: 2px;
+  border-color: black;
+}
+li {
+  list-style-type: none;
+}
+a  {
+  text-decoration: none;
+  color: black;
+}
+
+#nav a:hover {
+  background-color: grey;
+}
+#nav a:active {
+  background-color: darkgrey;
+}
+#wrapper {
+  margin-top: 10px;
+  width: 95%;
+  margin: 0 auto;
+}
+#main {
+  width: calc(100% - 4px);
+  background-color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  border-radius: 5px;
+  font-size: 25px;
+  display:  inline-block;
+  padding-left: 10px;
+  margin-top: 10px;
+  word-wrap: break-word;
+}
+#main h4 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+#main p {
+  background-color:lightgrey;
+  margin-right: 10px;
+}
+#main p:hover {
+  background-image: url(../images/rainbow.gif);
+  background-position: center center;
+  color: white;
+}
+#main p:active {
+  background-color: darkred;
+}
+#main h3 {
+  text-decoration: underline;
+}
+label {
+  font-weight: bold;
+  color: black;
+}
+
+textarea{
+  height:300px;
+  width: calc(50% - 6px);
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  border-radius: 5px;
+  font-size: 20px;
+  resize: none;
+}
+textarea::first-line{
+  font-size: 30px;
+  color: black;
+}
+input{
+  height: 40px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  border-radius: 5px;
+  width: 50%;
+  font-size: 1.2em;
+}
+ {
+  margin-bottom: 20px;
+}
+div .form-actions {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 100%;
+}
+fieldset{
+  border: none;
+}
+#Fehler{
+  color: #B40404;
+  background-color: #F5A9A9;
+  margin-bottom: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #B40404;
+  border-radius: 5px;
+  width: 50%;
+}
+#main a {
+  width: 100%;
+  display: inline-block;
+}
+#main a:hover {
+  width: 80%;
+  color: white;
+}
+.rating_bar div div {
+  background: url(/img/rating_bar_tip.gif) right 0 no-repeat;
+}
+img {
+  max-width: 50%;
+  max- height: 200px;
+}
+#nav #Benutzer {
+  clear: both;
+}
