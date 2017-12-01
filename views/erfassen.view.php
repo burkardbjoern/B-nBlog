@@ -1,4 +1,4 @@
-
+<?php include 'models/erfassen.model.php' ?>
       <div id="head">
         <p id="welcome"> Eintrag erfassen </p>
       </div>
@@ -21,7 +21,7 @@
           <?php
         }
            ?>
-        <form action="index.php" method="post">
+        <form action="index.php?page=erfassen" method="post">
           <fieldset>
               <label class="form-label"for="benutzername">Benutzername:</label><br />
               <input placeholder="Benutzername"class="form-control" type="text" id="Vorname" name="benutzer" value="<?php echo $benutzer?>"><br />

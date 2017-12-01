@@ -1,10 +1,10 @@
-
+<?php include 'models/passwd.model.php' ?>
       <div id="head">
         <p id="welcome">Passwort ändern</p>
       </div>
 
       <div id="main">
-        <p><a href="../index.php">zurück</a></p>
+        <p><a href="index.php?page=ip-adress">zurück</a></p>
 
         <h3>Passwort ändern:</h3>
 
@@ -25,7 +25,7 @@
         }
 
            ?>
-        <form action="index.php" method="post">
+        <form action="index.php?page=passwd" method="post">
           <fieldset>
               <label class="form-label"for="name">Name:</label><br />
               <select name="friends" id="Vorname" size="1">

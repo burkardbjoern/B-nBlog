@@ -7,16 +7,9 @@
 
       <div id="main">
           <h3>Hier sind die Links zu den Blogs von meinen Kollegen:</h3>
-          <?php
-            $dbconnection = new PDO('mysql:host=localhost;dbname=ipadressen','root','');
-          ?>
+
+          <?php include 'models/home.model.php' ?>
           <h4>Fynn:</h4>
-          <?php
-          $stmt = $dbconnection->query("SELECT ip,home FROM t_ipadress order by id");
-          $ipArray = $stmt -> fetchAll();
-          ?>
-
-
           <p><a href="http://<?php echo $ipArray[2][0] ?><?php echo $ipArray[2][1] ?>">Fynnus Blogus</a></p>
           <h4>Carolina:</h4>
           <p><a href="http://<?php echo $ipArray[1][0]?><?php echo $ipArray[1][1] ?>">Carolina's Blog</a></p>

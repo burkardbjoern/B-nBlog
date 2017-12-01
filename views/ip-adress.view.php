@@ -1,3 +1,4 @@
+<?php include 'models/ip-adress.model.php' ?>
 
       <div id="head">
         <p id="welcome"> IP-Adresse für die Blogs ändern </p>
@@ -24,7 +25,7 @@
         }
 
            ?>
-        <form action="index.php" method="post">
+        <form action="index.php?page=ip-adress" method="post">
           <fieldset>
               <label class="form-label"for="name">Name:</label><br />
               <select name="friends" id="Vorname" size="1">
@@ -49,13 +50,5 @@
       </form>
       <div>
       </div>
-      <?php $dbconnection = new PDO('mysql:host=localhost;dbname=ipadressen','root','');
-
-      $stmt = $dbconnection->query("SELECT * FROM t_ipadress ORDER BY name desc");
-      foreach ($stmt as $x) {
-        echo $x["name"] . 's ';
-        echo 'IP-Adresse: ' . $x["ip"] . '<br />';
-        echo '<hr />';
-      }
-      ?>
-      <p><a href="passwd/">Persönliches Passwort ändern</a></p>
+      <?php include 'models/ip-adress.part.model.php' ?>
+      <p><a href="index.php?page=passwd">Persönliches Passwort ändern</a></p>

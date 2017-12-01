@@ -1,3 +1,4 @@
+<?php include 'models/benutzer.model.php' ?>
 
       <div id="head">
         <p id="welcome">Benutzer anmelden</p>
@@ -27,7 +28,7 @@
         }
 
            ?>
-        <form action="index.php" method="post">
+        <form action="index.php?page=benutzer" method="post">
           <fieldset>
               <label class="form-label"for="user">Benutzername:</label><br />
               <input placeholder="Benutzername"class="form-control" type="text" id="Vorname" name="user" value="">
