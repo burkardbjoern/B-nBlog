@@ -101,9 +101,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
               echo 'Durchschnittsbewertung= Meh';
              if($bewertung >=3 && $bewertung < 4)
               echo 'Durchschnittsbewertung= Medium';
-             if($bewertung >=4 && $bewertung < 5)
+             if($bewertung >=4.6 && $bewertung < 5)
               echo 'Durchschnittsbewertung= Good';
-             if($bewertung == 5 && $bewertung > 4.7)
+             if($bewertung == 5 || $bewertung > 4.7)
                echo 'Durchschnittsbewertung= Godlike';
            }
            else {

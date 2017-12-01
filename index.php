@@ -34,7 +34,7 @@
         <div id="main">
             <h3>Hier sind die Links zu den Blogs von meinen Kollegen:</h3>
             <?php
-              $dbconnection = new PDO('mysql:host=10.20.16.102;dbname=ipadressen','DB_BLJ','BLJ12345l');
+              $dbconnection = new PDO('mysql:host=localhost;dbname=ipadressen','root','');
             ?>
             <h4>Fynn:</h4>
             <?php

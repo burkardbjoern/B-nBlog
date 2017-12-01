@@ -71,9 +71,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
      if($passwd != $password)
       $error[] = '-Das Passwort für den User: Céline ist nicht korrekt';
     }
+    if($name === 'raffi')
+    {
     $password = $passwdArray[7][0];
     if($passwd != $password)
      $error[] = '-Das alte Passwort für den User: Raffi ist nicht korrekt';
+    }
    }
 
 if(empty($error) && !empty($name) && !empty($ipadress))

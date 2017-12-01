@@ -17,18 +17,27 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     $benutzer = $_POST["benutzer"];
     $passwd = $_POST["passwd"];
     $blog = trim($_POST["eintrag"]);
+    $groesse = strlen($blog);
 
     $dbconnection = new PDO('mysql:host=localhost;dbname=blog','root','');
-    $stmt = $dbconnection->query("SELECT count(*) FROM `user` WHERE user = '$benutzer'");
+    $stmt = $dbconnection->query("SELECT user FROM user WHERE user ='$benutzer'");
     $user_array = $stmt -> fetchAll();
-    if($user_array[0][0] < 1)
+    error_reporting(0);
+    if($user_array[0][0] != $benutzer)
     {
       $error[] = '-Der Benutzername exsistiert nicht';
     }
-    $stmt = $dbconnection->query("SELECT passwd FROM user WHERE name ='$benutzer'");
-    $passwdArray = $stmt -> fetchAll();
-    if($passwdArray[0][0] != $passwd) {
-      $error[] = '-Das Passwort für diesen User ist nicht korrekt';
+    $stmt = $dbconnection->query("SELECT oldpasswd FROM user WHERE user ='$benutzer'");
+    $user_array = $stmt -> fetchAll();
+    error_reporting(0);
+    if($user_array[0][0] != $passwd)
+    {
+      $error[] = '-Das Passwort ist falsch';
+    }
+    if($groesse > 400)
+    {
+      $error[] = '-Der Blogeintrag ist zu lange';
+      $error[] = "-Die max. Länge beträgt 400 Zeichen, dein Blogeintrag beträgt $groesse Zeichen";
     }
 
     if($benutzer === '')
@@ -114,7 +123,7 @@ $stmt = $dbconnection->query("INSERT INTO posts(user_name,blog_post,post_time) V
                 <label class="form-label"for="passwd">Passwort:</label><br />
                 <input placeholder="Passwort"class="form-control" type="password" id="Vorname" name="passwd">
                 <label class="form-label"for="eintrag"><br />Ihr Eintrag:</label><br />
-                <textarea placeholder="<Titel>"name="eintrag"></textarea>
+                <textarea placeholder="<Titel>"name="eintrag"><?php echo $blog?></textarea>
                   <div class="form-actions" >
                       <input id="button" type="submit" value="Abschicken">
                   </div>
