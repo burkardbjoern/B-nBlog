@@ -77,59 +77,6 @@ $stmt = $dbconnection->query("INSERT INTO posts(user_name,blog_post,post_time) V
   <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body>
-  <div id="wrapper">
-        <div id="head">
-          <p id="welcome"> Eintrag erfassen </p>
-        </div>
-        <div id="nav">
-          <ul>
-             <li><a href="../">Home</a></li>
-          </ul>
-          <ul>
-             <li><a href="../blogs/">Einträge</a></li>
-          </ul>
-          <ul>
-             <li><a href="index.php">Neuer Blogpost erstellen</a></li>
-          </ul>
-          <ul>
-             <li><a href="../ip-adress/">IP-Adressen</a></li>
-          </ul>
-          <ul>
-             <li><a href="../benutzer/">Benutzer</a></li>
-          </ul>
-        </div>
-        <div id="main">
-          <h3>Neuer Eintrag verfassen:</h3>
-          <?php
-                  if(!empty($error)) {
-          ?>
-
-
-          <div id="Fehler">
-            <ul>
-              <?php
-                foreach ($error as $ausgabe)
-                  echo'<li>'. $ausgabe . '</li>';
-              ?>
-            </ul>
-            </div>
-            <?php
-          }
-             ?>
-          <form action="index.php" method="post">
-            <fieldset>
-                <label class="form-label"for="benutzername">Benutzername:</label><br />
-                <input placeholder="Benutzername"class="form-control" type="text" id="Vorname" name="benutzer" value="<?php echo $benutzer?>"><br />
-                <label class="form-label"for="passwd">Passwort:</label><br />
-                <input placeholder="Passwort"class="form-control" type="password" id="Vorname" name="passwd">
-                <label class="form-label"for="eintrag"><br />Ihr Eintrag:</label><br />
-                <textarea placeholder="<Titel>"name="eintrag"><?php echo $blog?></textarea>
-                  <div class="form-actions" >
-                      <input id="button" type="submit" value="Abschicken">
-                  </div>
-          </fieldset>
-        </form>
-        </div>
-
+  <?php include 'views/erfassen.view.php' ?>
 </body>
 </html>
